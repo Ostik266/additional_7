@@ -1,5 +1,5 @@
 module.exports = function solveSudoku(matrix) {
-
+let counter = 0;
   let sudoku = matrix;
 let current = 0;
 let variants = [];
@@ -628,7 +628,8 @@ let numbers = {
   }
 }
 }
-if (isEmpty(numbers) === false)
+counter++;
+if (isEmpty(numbers) === false && counter <= 10)
 {
 	
 	solveSudoku()
@@ -678,7 +679,8 @@ function solveSudoku() {
       }
     }
   }
-if (isEmpty(numbers) === false)
+  counter++;
+if (isEmpty(numbers) === false && counter <= 10)
 {
 	
 	blocksolver()
